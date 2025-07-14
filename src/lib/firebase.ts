@@ -7,12 +7,13 @@ const API_KEY = process.env.NEXT_PUBLIC_FIREBASE_API_KEY;
 const AUTH_DOMAIN = process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
 const PROJ_ID = process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID;
 
-
 const firebaseConfig = {
   apiKey: API_KEY,
   authDomain: AUTH_DOMAIN,
   projectId: PROJ_ID,
 };
+
+console.log("Firebase config from env:", firebaseConfig);
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const auth = getAuth(app);
