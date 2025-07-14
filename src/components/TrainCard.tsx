@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { loadStopNames } from "../lib/stopNames";
+import { routeIconMap } from "../lib/iconMap";
 
 
 type TrainData = {
@@ -50,7 +51,7 @@ export default function TrainCard({ route, stop, isOpen, onToggle }: Props) {
 
     {/* Train Icon */}
     <Image
-      src={`/icons/${route.toLowerCase()}.png`}
+      src={`/icons/${routeIconMap[route]}`}
       alt={`${route} icon`}
       width={20}
       height={20}

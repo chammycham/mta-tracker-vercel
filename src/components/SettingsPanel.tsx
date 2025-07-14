@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { loadRouteStops } from "../lib/routeStops";
 import { loadStopNames } from "../lib/stopNames";
+import { routeIconMap } from "../lib/iconMap";
 import classNames from "classnames";
 
 type Props = {
@@ -155,7 +156,7 @@ export default function SettingsPanel({ trackedRoutes, trackedStops, onAddRoute,
                 }
                 className="cursor-pointer hover:scale-110 transition p-1">
                   <Image
-                  src={`/icons/${route.toLowerCase()}.png`}
+                  src={`/icons/${routeIconMap[route]}`}
                   alt={route}
                   width={30}
                   height={30}
