@@ -54,6 +54,7 @@ export default function TrainCard({ route, stop, isOpen, onToggle }: Props) {
       alt={`${route} icon`}
       width={20}
       height={20}
+      unoptimized
     />
 
     {/* Stop Name */}
