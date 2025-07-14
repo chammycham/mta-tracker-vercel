@@ -86,7 +86,7 @@ export default function SettingsPanel({ trackedRoutes, trackedStops, onAddRoute,
   const allRoutes = ["1", "2", "3", "4", "5", "6", "6X", "7", "7X", 
     "A", "C", "E", 
     "G", 
-    "N", "Q", "R", "w", 
+    "N", "Q", "R", "W", 
     "B", "D", "F", "M", "J", "Z", "L", 
     "M4"];
     

@@ -17,7 +17,7 @@ export function getFeedUrl(route: string): string {
     return "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-jz";
   } else if (["L"].includes(routeUpper)) {
     return "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-l";
-  } else if (["N", "Q", "R", "w"].includes(routeUpper)) {
+  } else if (["N", "Q", "R", "W"].includes(routeUpper)) {
     return "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-nqrw";
   } else if (/^M\d/.test(routeUpper)) {
     return `https://gtfsrt.prod.obanyc.com/tripUpdates?key=${API_KEY}`;

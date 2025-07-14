@@ -50,7 +50,7 @@ export default function TrainCard({ route, stop, isOpen, onToggle }: Props) {
 
     {/* Train Icon */}
     <Image
-      src={`/icons/${route}.png`}
+      src={`/icons/${route.toLowerCase()}.png`}
       alt={`${route} icon`}
       width={20}
       height={20}
