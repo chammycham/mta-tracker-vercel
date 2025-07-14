@@ -61,8 +61,8 @@ export default function SettingsPanel({ trackedRoutes, trackedStops, onAddRoute,
 
     const delayedHandleClick = (e: MouseEvent) =>
       requestAnimationFrame(() => handleClick(e));
-    document.addEventListener("mousedown", delayedHandleClick);
-    return () => document.removeEventListener("mousedown", delayedHandleClick);
+    document.addEventListener("click", delayedHandleClick);
+    return () => document.removeEventListener("click", delayedHandleClick);
   }, [mode, selectedRoute, dashboardRef]);
   
   //loading stop names
