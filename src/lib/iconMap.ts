@@ -1,0 +1,28 @@
+// src/lib/iconMap.ts
+export const routeIconMap: Record<string, string> = {
+  "1": "1.png",
+  "2": "2.png",
+  "3": "3.png",
+  "4": "4.png",
+  "5": "5.png",
+  "6": "6.png",
+  "6X": "6X.png",
+  "7": "7.png",
+  "7X": "7X.png",
+  "A": "a.png",
+  "C": "c.png",
+  "E": "e.png",
+  "G": "g.png",
+  "N": "n.png",
+  "Q": "q.png",
+  "R": "r.png",
+  "W": "w.png",
+  "B": "b.png",
+  "D": "d.png",
+  "F": "f.png",
+  "M": "m.png",
+  "J": "j.png",
+  "Z": "z.png",
+  "L": "l.png",
+  "M4": "m4.png"
+};
