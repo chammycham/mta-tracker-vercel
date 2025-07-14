@@ -155,7 +155,7 @@ export default function SettingsPanel({ trackedRoutes, trackedStops, onAddRoute,
                 }
                 className="cursor-pointer hover:scale-110 transition p-1">
                   <Image
-                  src={`/icons/${route}.png`}
+                  src={`/icons/${route.toLowerCase()}.png`}
                   alt={route}
                   width={30}
                   height={30}
