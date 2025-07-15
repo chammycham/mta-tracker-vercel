@@ -35,7 +35,8 @@ export default function SettingsPanel({ trackedRoutes, trackedStops, onAddRoute,
 
   //how to close the settings menu
   useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
+    // const handleClick = (e: MouseEvent) => {
+    const handleClick = (e: Event) => {
       const target = e.target as Node;
       const clickedInsidePanel = panelRef.current?.contains(target);
       const clickedInsideDashboard = dashboardRef.current?.contains(target);
@@ -59,11 +60,29 @@ export default function SettingsPanel({ trackedRoutes, trackedStops, onAddRoute,
       }
     };
 
-    const delayedHandleClick = (e: MouseEvent) =>
-      requestAnimationFrame(() => handleClick(e));
-    document.addEventListener("click", delayedHandleClick);
-    return () => document.removeEventListener("click", delayedHandleClick);
-  }, [mode, selectedRoute, dashboardRef]);
+  //   const delayedHandleClick = (e: MouseEvent) =>
+  //     requestAnimationFrame(() => handleClick(e));
+
+  //   document.addEventListener("mousedown", delayedHandleClick);
+
+  //   return () => document.removeEventListener("mousedown", delayedHandleClick);
+  // }, [mode, selectedRoute, dashboardRef]);
+
+  const delayedHandleClick = (e: Event): void => {
+  const event = e;
+  requestAnimationFrame(() => handleClick(event));
+};
+
+
+  document.addEventListener("mousedown", delayedHandleClick);
+  document.addEventListener("touchstart", delayedHandleClick);
+
+  return () => {
+    document.removeEventListener("mousedown", delayedHandleClick);
+    document.removeEventListener("touchstart", delayedHandleClick);
+  };
+}, [mode, selectedRoute, dashboardRef]);
+
   
   //loading stop names
   useEffect(() => {
@@ -105,6 +124,7 @@ export default function SettingsPanel({ trackedRoutes, trackedStops, onAddRoute,
     
     return (
     <div ref={panelRef} className="fixed inset-0 z-50 pointer-events-none">
+      
       {/* settings button */}
       <div className="pointer-events-auto fixed bottom-4 right-4">
         <button
