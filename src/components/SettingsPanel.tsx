@@ -35,8 +35,8 @@ export default function SettingsPanel({ trackedRoutes, trackedStops, onAddRoute,
 
   //how to close the settings menu
   useEffect(() => {
-    // const handleClick = (e: MouseEvent) => {
-    const handleClick = (e: Event) => {
+    const handleClick = (e: MouseEvent) => {
+    // const handleClick = (e: Event) => {
       const target = e.target as Node;
       const clickedInsidePanel = panelRef.current?.contains(target);
       const clickedInsideDashboard = dashboardRef.current?.contains(target);
@@ -60,28 +60,27 @@ export default function SettingsPanel({ trackedRoutes, trackedStops, onAddRoute,
       }
     };
 
-  //   const delayedHandleClick = (e: MouseEvent) =>
-  //     requestAnimationFrame(() => handleClick(e));
+    const delayedHandleClick = (e: MouseEvent) =>
+      requestAnimationFrame(() => handleClick(e));
 
-  //   document.addEventListener("mousedown", delayedHandleClick);
+    document.addEventListener("mousedown", delayedHandleClick);
 
-  //   return () => document.removeEventListener("mousedown", delayedHandleClick);
-  // }, [mode, selectedRoute, dashboardRef]);
+    return () => document.removeEventListener("mousedown", delayedHandleClick);
+  }, [mode, selectedRoute, dashboardRef]);
 
-  const delayedHandleClick = (e: Event): void => {
-  const event = e;
-  requestAnimationFrame(() => handleClick(event));
-};
+//   const delayedHandleClick = (e: Event): void => {
+//   const event = e;
+//   requestAnimationFrame(() => handleClick(event));
+// };
 
+//   document.addEventListener("mousedown", delayedHandleClick);
+//   document.addEventListener("touchstart", delayedHandleClick);
 
-  document.addEventListener("mousedown", delayedHandleClick);
-  document.addEventListener("touchstart", delayedHandleClick);
-
-  return () => {
-    document.removeEventListener("mousedown", delayedHandleClick);
-    document.removeEventListener("touchstart", delayedHandleClick);
-  };
-}, [mode, selectedRoute, dashboardRef]);
+//   return () => {
+//     document.removeEventListener("mousedown", delayedHandleClick);
+//     document.removeEventListener("touchstart", delayedHandleClick);
+//   };
+// }, [mode, selectedRoute, dashboardRef]);
 
   
   //loading stop names
